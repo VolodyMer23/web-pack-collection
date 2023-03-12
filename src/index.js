@@ -33,3 +33,27 @@
 
 
 import './styles/style.css'
+
+import { base, list, frameworks, libs} from './data/hbsData'
+import handleFile from './template/handle.hbs'
+
+const markUp= handleFile(base);
+// console.log(markUp);
+
+const root = document.querySelector('#root');
+root.insertAdjacentHTML('beforeend', markUp);
+
+import task from './template/exrctwo.hbs';
+const makrupSecond = task(list);
+// console.log(makrupSecond);
+root.insertAdjacentHTML('beforeend', makrupSecond);
+
+import frameworksArray from './template/thirdtask.hbs';
+const makrupThird = frameworksArray(frameworks);
+// console.log(makrupThird);
+root.insertAdjacentHTML('beforeend', makrupThird);
+
+import libsArray from './template/forthtask.hbs';
+const markupFourth = libsArray(libs);
+console.log(markupFourth);
+root.insertAdjacentHTML('beforeend', markupFourth);
